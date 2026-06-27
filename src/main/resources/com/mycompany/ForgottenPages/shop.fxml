@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.ForgottenPages.controller.ShopController"
+      alignment="CENTER" spacing="16"
+      style="-fx-background-color: #12122a;">
+    <padding><Insets top="30" bottom="20" left="30" right="30"/></padding>
+    <Label text="🛒  Loja" style="-fx-text-fill: #CCCC44; -fx-font-size: 20; -fx-font-weight: bold;"/>
+    <Label fx:id="lblPontos" text="Pontos: 0" style="-fx-text-fill: #CCCCCC; -fx-font-size: 14;"/>
+    <Label fx:id="lblFeedback" text="" style="-fx-text-fill: #88FF88; -fx-font-size: 12;"/>
+
+    <Button text="❤ +20 HP  (1pt)" onAction="#upgradeVida" prefWidth="200" prefHeight="34"
+            style="-fx-background-color: #1a2a1a; -fx-text-fill: #88FF88; -fx-border-color: #44AA44;
+                   -fx-border-width:1; -fx-border-radius:4; -fx-background-radius:4;"/>
+    <Button text="⚔ +3 Dano  (1pt)" onAction="#upgradeDano" prefWidth="200" prefHeight="34"
+            style="-fx-background-color: #2a1010; -fx-text-fill: #FF8888; -fx-border-color: #AA4444;
+                   -fx-border-width:1; -fx-border-radius:4; -fx-background-radius:4;"/>
+    <Button text="🪙 +1 Moeda  (1pt)" onAction="#upgradeClash" prefWidth="200" prefHeight="34"
+            style="-fx-background-color: #1a1a2a; -fx-text-fill: #8888FF; -fx-border-color: #4444AA;
+                   -fx-border-width:1; -fx-border-radius:4; -fx-background-radius:4;"/>
+</VBox>

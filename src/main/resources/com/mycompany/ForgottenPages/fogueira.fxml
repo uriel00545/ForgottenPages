@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      alignment="CENTER" spacing="12"
+      style="-fx-background-color: #12122a;">
+    <padding><Insets top="30" bottom="20" left="30" right="30"/></padding>
+    <Label text="🔥  Fogueira" style="-fx-text-fill: #FF8800; -fx-font-size: 20; -fx-font-weight: bold;"/>
+    <Label text="Descanse aqui antes de avançar."
+           style="-fx-text-fill: #AAAAAA; -fx-font-size: 13;"/>
+    <Label text="Cada wave concluída gera 1 ponto.\nUse pontos em Upgrades (após derrota)."
+           style="-fx-text-fill: #888888; -fx-font-size: 12;" textAlignment="CENTER"/>
+</VBox>
