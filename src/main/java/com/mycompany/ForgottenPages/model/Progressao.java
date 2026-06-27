@@ -15,7 +15,9 @@ public class Progressao {
     private int danoNivel;
 
     
-    public void ganharPonto () {}
+    public void ganharPonto (int valor) {
+          this.pontos += valor;
+    }
     
     public boolean gastarPonto(int quantidade) {
 

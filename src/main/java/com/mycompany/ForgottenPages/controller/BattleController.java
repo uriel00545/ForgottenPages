@@ -207,28 +207,54 @@ public class BattleController {
     // =========================
     // BATTLE END
     // =========================
-    private void finalizarBatalha(boolean vitoria) {
-        hboxSkills.setDisable(true);
+    private boolean finalizado = false;
 
-        PauseTransition pausa = new PauseTransition(Duration.seconds(2));
+private void finalizarBatalha(boolean vitoria) {
 
-        pausa.setOnFinished(e -> {
-            if (vitoria) {
-                gs.avancarWave();
+    if (finalizado) return; // 🔒 impede execução dupla
+    finalizado = true;
 
-                // Desbloqueia boss stage após wave 10
-                if (gs.getCiclo().getWaveAtual() > 10) {
-                    Navegar.ir("bossfinal");
-                } else {
-                    Navegar.ir("area");
-                }
+    hboxSkills.setDisable(true);
+
+    PauseTransition pausa = new PauseTransition(Duration.seconds(2));
+
+    pausa.setOnFinished(e -> {
+
+        Runnable acaoFinal;
+
+        if (vitoria) {
+            
+            
+            gs.avancarWave();
+
+int wave = gs.getCiclo().getWaveAtual();
+
+if (wave % 2 == 0) {
+    gs.getProgressao().ganharPonto(1);
+
+}
+
+            if (gs.getCiclo().getWaveAtual() > 10) {
+                acaoFinal = () -> Navegar.ir("bossfinal");
             } else {
-                Navegar.ir("end");
+                acaoFinal = () -> Navegar.ir("area");
+            }
+
+        } else {
+            acaoFinal = () -> Navegar.ir("end");
+        }
+
+        javafx.application.Platform.runLater(() -> {
+            try {
+                acaoFinal.run();
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
         });
+    });
 
-        pausa.play();
-    }
+    pausa.play();
+}
 
     // =========================
     // UI UPDATE

@@ -4,7 +4,7 @@
 <?import javafx.geometry.Insets?>
 
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.mycompany.DungeonMaster.controller.EndController"
+      fx:controller="com.mycompany.ForgottenPages.controller.EndController"
       alignment="CENTER" spacing="20" prefWidth="640" prefHeight="480"
       style="-fx-background-color: #0d0d1a;">
     <padding><Insets top="60" bottom="40" left="80" right="80"/></padding>

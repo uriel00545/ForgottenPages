@@ -11,7 +11,7 @@ public class GameState {
     private final Ciclo ciclo = new Ciclo();
     private List<Inimigo> inimigosAtuais = new ArrayList<>();
     private final List<String> battleLog = new ArrayList<>();
-    private final Progressao progressao = new Progressao(0);
+    private Progressao progressao = new Progressao(0);
     // nome digitado no menu para busca/criação no banco
     private String nomeJogador = "Sinner";
 
@@ -39,7 +39,7 @@ public class GameState {
     }
 
     public void avancarWave() {
-        progressao.ganharPonto();   // 1 ponto por wave concluída
+        progressao.ganharPonto(1);   // 1 ponto por wave concluída
         ciclo.avancarWave();
     }
 
